@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Tokens: "Cobre & Carvão" ---------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f4f1ea;
+  --surface: #ffffff;
+  --ink: #1a1a18;
+  --ink-2: #6b6860;
+  --line: #d9d4c8;
+  --copper: #c2410c;
+  --copper-soft: rgba(194, 65, 12, 0.08);
+  --olive: #4d5b2e;
+  --olive-soft: rgba(77, 91, 46, 0.1);
+}
+
+.dark {
+  --bg: #0f0f0e;
+  --surface: #181816;
+  --ink: #ece8df;
+  --ink-2: #8f8b82;
+  --line: #2a2926;
+  --copper: #e8621f;
+  --copper-soft: rgba(232, 98, 31, 0.12);
+  --olive: #9db56a;
+  --olive-soft: rgba(157, 181, 106, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-line: var(--line);
+  --color-copper: var(--copper);
+  --color-copper-soft: var(--copper-soft);
+  --color-olive: var(--olive);
+  --color-olive-soft: var(--olive-soft);
+
+  --font-display: var(--font-instrument), Georgia, serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--copper);
+  color: var(--bg);
+}
+
+/* Linhas de grid sutis (planta baixa) */
+.grid-lines {
+  background-image: linear-gradient(to right, var(--line) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* Link editorial com sublinhado em cobre */
+.link-copper {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+.link-copper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--copper);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-copper:hover::after {
+  transform: scaleX(0.35);
+}
+
+.hairline {
+  border-color: var(--line);
+}
+
+/* Entrada do hero, sem JS */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
