@@ -2,14 +2,14 @@ export const site = {
   name: "Swetony Ancelmo",
   role: "Desenvolvedor FullStack",
   tagline:
-    "Mantenho e evoluo sistemas de gestão em saúde que estão em produção — APIs REST, relatórios clínicos e muita investigação com SQL.",
+    "Mantenho e evoluo uma plataforma de indicadores de saúde pública em produção — APIs GraphQL, ETL, relatórios e muita investigação com SQL.",
   quote:
     "Gosto de discutir decisões técnicas, trade-offs de arquitetura e por que “depende” quase sempre é a resposta certa.",
-  url: "https://portfolio-swetony.vercel.app", // TODO: trocar pela URL final da Vercel
+  url: "https://about-swetony.vercel.app",
   email: "swetonyancelmo@gmail.com",
   github: "https://github.com/swetonyancelmo",
-  linkedin: "https://www.linkedin.com/in/swetonyancelmo", // TODO: confirmar slug do LinkedIn
-  location: "Pernambuco, Brasil",
+  linkedin: "https://www.linkedin.com/in/swetony-ancelmo",
+  location: "Recife, Pernambuco",
   company: "Marques Consult",
   companySince: "nov/2025",
   status: "estagiário, evoluindo para júnior",
