@@ -22,8 +22,8 @@ export const projects: Project[] = [
     index: "01",
     title: "Cadastro de Famílias — Amigos do Nordeste",
     summary:
-      "Sistema para a associação que atende famílias no Sertão do Moxotó (PE). Projeto voluntário com previsão de produção.",
-    year: "2025",
+      "Sistema para a associação que atende mais de 2.500 famílias no Sertão do Moxotó (PE): API, painel web e app de campo que funciona sem internet. Trabalho interdisciplinar da UNIBRA, nota 10.",
+    year: "2026",
     status: "em-andamento",
     role: "líder técnico · arquitetura, telas, endpoints e infra",
     problem:
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     solution:
       "Arquitetei o sistema inteiro e entreguei a base pronta: autenticação com argon2id, access token de 15 min em memória e renovação em cookie httpOnly, toda rota nascendo protegida, migrações Flyway e decisões registradas em ADRs. Defini regras do projeto (nada calculável é digitado; todo campo coletado aparece em algum relatório) e dividi as tarefas no Kanban.",
     result:
-      "A equipe consegue criar controllers de domínio sem mexer em Spring Security. Base documentada com especificação, ADRs e protótipo no Figma, a caminho de produção.",
+      "API, painel e app publicados, com 10 ADRs, CI no GitHub Actions e centenas de testes nos três repositórios. A equipe criava controllers de domínio sem mexer em Spring Security, e nenhum dado de família fica guardado no celular da agente.",
     stack: [
       "Java 21",
       "Spring Boot 3.4",
@@ -40,8 +40,14 @@ export const projects: Project[] = [
       "Flyway",
       "PostgreSQL",
       "Docker",
+      "Next.js",
+      "React Native",
     ],
-    links: [{ label: "código", href: gh("amigos-do-nordeste-api") }],
+    links: [
+      { label: "api", href: gh("amigos-do-nordeste-api") },
+      { label: "web", href: gh("amigos-do-nordeste-web") },
+      { label: "app", href: gh("amigos-do-nordeste-app") },
+    ],
   },
   {
     slug: "medsys-api",
@@ -49,7 +55,7 @@ export const projects: Project[] = [
     title: "MedSys — API de gestão de consultas médicas",
     summary:
       "Ciclo completo de uma clínica: pacientes, médicos, agenda, consultas e receitas. Trabalho em equipe de 3 na disciplina de Cliente-Servidor.",
-    year: "2025",
+    year: "2026",
     status: "estudo",
     role: "arquitetura do backend, segurança e endpoints de pacientes, médicos e receitas",
     problem:
@@ -77,7 +83,7 @@ export const projects: Project[] = [
     title: "E-commerce em microsserviços",
     summary:
       "Catálogo, estoque e pedidos como serviços independentes, com gateway, discovery e circuit breaker.",
-    year: "2025",
+    year: "2026",
     status: "estudo",
     role: "projeto individual de estudo",
     problem:
@@ -105,7 +111,7 @@ export const projects: Project[] = [
     title: "Wallet — Clean Architecture em NestJS",
     summary:
       "Carteira digital (criar conta, depositar, sacar, transferir) com o domínio isolado do framework e do banco.",
-    year: "2025",
+    year: "2026",
     status: "estudo",
     role: "projeto individual de estudo",
     problem:
